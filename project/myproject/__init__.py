@@ -15,7 +15,7 @@ Migrate(app, db)
 
 # -------- configuration for db
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://codeXz:hpprobook450g3*@127.0.0.1/social'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SECRET_KEY'] = 'mysecretkey'
 
 
@@ -41,3 +41,10 @@ mail = Mail(app)
 login = LoginManager()
 login.init_app(app)
 login.login_view = 'users.login'
+login_manager.refresh_view = "users.change"
+from myproject.messages.messages import messages
+from myproject.users.users import users
+
+
+app.register_blueprint(messages)
+app.register_blueprint(users)
