@@ -47,5 +47,5 @@ class yourEmail(FlaskForm):
 
 
 class confirmationForm(FlaskForm):
-    password = PasswordField('the code', validators=[DataRequired()], render_kw={'placeholder': 'Password'})
+    code = StringField('the code', validators=[DataRequired()], render_kw={'placeholder': 'Password'})
     submit = SubmitField('confirm')

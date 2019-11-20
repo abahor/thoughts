@@ -16,7 +16,7 @@ class Users(db.Model, UserMixin):
     username = db.Column(db.String(64), nullable=False)
     password = db.Column(db.String(128), nullable=False)
     profile_pic = db.Column(db.String(64), default='/static/pics/default.jpg', nullable=False)
-    post = db.relationship('Posts', backref='author', lazy='dynamic')
+    post = db.relationship('Thoughts', backref='author', lazy='dynamic')
     user_comments = db.relationship('comments', backref='user_comments', lazy='joined')
 
     def __init__(self, email, username, password):
@@ -42,4 +42,3 @@ class Thoughts(db.Model):
         self.text = message
         self.user_id = user_id
         self.private_or_public = pri
-
