@@ -3,6 +3,7 @@ from myproject.models import Users, Thoughts
 from myproject.messages.forms import createthought
 from flask_login import login_required
 
+<<<<<<< HEAD
 messages = Blueprint('messages',__name__,template_folder='temp')# ----------------- use two encrytion in the chat app over encrytion
 
 @messages.route('/create')
@@ -13,3 +14,8 @@ def create_thought():
         d = Thoughts(text= form.text.data,user_id=current_user.id,private=form.pri_pub.data)
 
     return render_template('createthought.html',form=form)
+=======
+messages = Blueprint('messages',__name__,template_folder='temp')
+
+@messages.route('/')
+>>>>>>> fbd144098a01ef62cdabc08c1fd96efc19aa983f
