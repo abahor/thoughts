@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20701cde-b887-44cc-b76f-9f8e3a41cca7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/myproject/messages/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/myproject/messages/messages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/myproject/messages/temp/createthought.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/myproject/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/myproject/users/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/myproject/users/users.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/myproject/users/temp/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/myproject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/myproject/messages/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/messages/messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/myproject/users/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/users/users.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +59,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

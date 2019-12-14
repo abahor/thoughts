@@ -41,7 +41,7 @@ mail = Mail(app)
 login = LoginManager()
 login.init_app(app)
 login.login_view = 'users.login'
-login_manager.refresh_view = "users.change"
+login.refresh_view = "users.change"
 from myproject.messages.messages import messages
 from myproject.users.users import users
 
