@@ -1,6 +1,6 @@
 from myproject import mail
 from flask import Blueprint,render_template,abort
-from flask_login import *
+from flask_login import current_user,login_user,logout_user,login_required
 from flask_mail import *
 from myproject.users.forms import RegisterationForm,formRecover,verifyForm,yourEmail,confirmationForm,Login
 from myproject import db
@@ -22,7 +22,7 @@ def login():
         return redirect(url_for('users.create'))
     form = Login()
     if form.validate_on_submit():
-        user = Users.query.filter_by('email'= form.email.data).first()
+        user = Users.query.filter_by(email= form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(current_user)
             return redirect(url_for('users.create'))
@@ -35,7 +35,7 @@ def register():
         return redirect(url_for('users.create'))
     form = RegisterationForm()
     if form.validate_on_submit():
-        user = Users.query.filter_by('email'=form.email.data).first()
+        user = Users.query.filter_by(email=form.email.data).first()
         if user:
             flash(Markup('this email already exist login instead'))
         else:
