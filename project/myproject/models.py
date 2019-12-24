@@ -34,11 +34,16 @@ class Thoughts(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     text = db.Column(db.Text)
-    private_or_public = db.Column(db.Boolean, nullable=False)
+    private = db.Column(db.Boolean, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
-    def __init__(self, text, message, user_id, pri):
+    def __init__(self, text, user_id, pri):
         self.text = text
-        self.text = message
         self.user_id = user_id
-        self.private_or_public = pri
+        self.private = pri
+
+class comments(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    text = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    date = db.Column(db.DateTime,default=datetime.utcnow,nullable=False)

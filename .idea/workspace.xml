@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20701cde-b887-44cc-b76f-9f8e3a41cca7" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/thoughts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/thoughts.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/myproject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/__init__.py" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/project/myproject/users/temp/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/myproject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/myproject/messages/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/messages/messages.py" afterDir="false" />
+>>>>>>> fb76cf676707eecdc4d497e125ad225af6850874
       <change beforePath="$PROJECT_DIR$/project/myproject/users/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/users/users.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -160,12 +167,16 @@
         <entry key="MAIN">
           <value>
             <State>
+<<<<<<< HEAD
               <option name="RECENTLY_FILTERED_USER_GROUPS">
                 <collection />
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
+=======
+              <option name="COLUMN_ORDER" />
+>>>>>>> fb76cf676707eecdc4d497e125ad225af6850874
             </State>
           </value>
         </entry>
