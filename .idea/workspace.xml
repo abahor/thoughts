@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20701cde-b887-44cc-b76f-9f8e3a41cca7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/myproject/users/temp/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/myproject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/myproject/messages/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/messages/messages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/myproject/users/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/myproject/users/users.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +24,7 @@
   <component name="ProjectId" id="1SlM0aUTsU8zgtoNs9BhcruCY8a" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
