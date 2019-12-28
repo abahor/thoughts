@@ -13,7 +13,7 @@ function loadItem() {
           var rererer = document.createElement('div');
           rererer.innerHTML= this.responseText
           main.appendChild(rererer)
-          sad += 3
+          sad += 10
           return ;
         }
       }
