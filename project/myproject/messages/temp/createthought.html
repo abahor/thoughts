@@ -10,7 +10,9 @@
 <div class="container">
   <div class="jumbotron">
     <h1>write your thoughts</h1>
+    <form method="post">
     <div class="form-group">
+      {{ form.hidden_tag() }}
 {{ form.text(id='text',class='form-control') }}
     </div>
 
@@ -21,7 +23,7 @@
     {{ form.submit(class="btn btn-primary") }}
   </div>
 </div>
-
+</form>
 <script type="text/javascript">
   var i = document.getElementById('text')
   var pri = document.getElementById('pri_pub')
