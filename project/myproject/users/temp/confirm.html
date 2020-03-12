@@ -5,12 +5,9 @@
 <div class="jumbotron">
   <form class=""  method="post">
     <div class="form-group">
-      {{ form.email.label(class="form-check-label") }}
-      {{ form.email(class='form-control') }}
-    </div>
-    <div class="form-group">
-      {{ form.username.label(class="form-check-label") }}
-      {{ form.username(class='form-control') }}
+      {{ form.hidden_tag() }}
+      {{ form.code.label(class="form-check-label") }}
+      {{ form.code(class='form-control') }}
     </div>
 
       {{ form.submit(class='btn btn-primary') }}

@@ -2,14 +2,9 @@ import string
 from random import choice, randint
 
 from myproject import mail
-<<<<<<< HEAD
-from flask import Blueprint,render_template,abort
-from flask_login import current_user,login_user,logout_user,login_required
-=======
 from flask import Blueprint, render_template, abort, redirect, url_for, session, flash, Markup
 from flask_login import current_user, login_required, logout_user, login_user
 from myproject.models import Users
->>>>>>> fb76cf676707eecdc4d497e125ad225af6850874
 from flask_mail import *
 from myproject.users.forms import RegisterationForm, formRecover, verifyForm, yourEmail, confirmationForm, Login
 from myproject import db
@@ -28,24 +23,23 @@ def create():
     return render_template('create.html')
 
 
-@users.route('/login')
+@users.route('/login',methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('users.create'))
     form = Login()
     if form.validate_on_submit():
-<<<<<<< HEAD
-        user = Users.query.filter_by(email= form.email.data).first()
-=======
         user = Users.query.filter_by(email=form.email.data).first()
->>>>>>> fb76cf676707eecdc4d497e125ad225af6850874
+        print(user)
         if user and user.check_password(form.password.data):
-            login_user(current_user)
+            login_user(user)
+            print('--------------------')
             return redirect(url_for('users.create'))
+    print(form.errors)
     return render_template('login.html', form=form)
 
 
-@users.route('/register')
+@users.route('/register', methods=['post', 'get'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('users.create'))
@@ -64,17 +58,18 @@ def register():
                               sender="jousefgamal46@gmail.com",
                               recipients=[form.email.data])
             message.body = f'here is the confirmation code {session["code"]}'
-            message.html = render_template('confirmation_code.html')
+            message.html = render_template('confirmation.html')
+            print(session['code'])
             try:
                 mail.send(message)
             except:
                 return abort(404)
             return redirect(url_for('users.confirm'))
 
-    return render_template('register.html')
+    return render_template('register.html', form=form)
 
 
-@users.route('/confirm')
+@users.route('/confirm', methods=['GET', 'POST'])
 def confirm():
     if current_user.is_authenticated:
         return abort(404)
@@ -93,7 +88,8 @@ def confirm():
             session['password'] = None
             session['code'] = None
             session['confirm'] = None
-    return render_template('confirmation.html')
+    print(form.errors)
+    return render_template('confirm.html',form=form)
 
 
 def randomcode():
@@ -106,3 +102,12 @@ def randomcode():
 def logout():
     logout_user()
     return redirect('/')
+
+
+@users.route('/about')
+def about():
+    return render_template('about.html')
+
+@users.route('/account')
+def account():
+    return render_template('account.html')

@@ -5,6 +5,7 @@
 <div class="jumbotron">
   <form class=""  method="post">
     <div class="form-group">
+      {{ form.hidden_tag() }}
       {{ form.email.label(class="form-check-label") }}
       {{ form.email(class='form-control') }}
     </div>
