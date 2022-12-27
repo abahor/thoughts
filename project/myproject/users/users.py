@@ -23,13 +23,15 @@ def create():
     return render_template('create.html')
 
 
-@users.route('/login',methods=['GET', 'POST'])
+@users.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('users.create'))
     form = Login()
     if form.validate_on_submit():
-        user = Users.query.filter_by(email=form.email.data).first()
+        print(form.email.data)
+        print(Users.query.filter(Users.email == form.email.data))
+        user = Users.query.filter(Users.email == form.email.data).first()
         print(user)
         if user and user.check_password(form.password.data):
             login_user(user)
@@ -89,7 +91,7 @@ def confirm():
             session['code'] = None
             session['confirm'] = None
     print(form.errors)
-    return render_template('confirm.html',form=form)
+    return render_template('confirm.html', form=form)
 
 
 def randomcode():
@@ -108,6 +110,8 @@ def logout():
 def about():
     return render_template('about.html')
 
+
 @users.route('/account')
+@login_required
 def account():
     return render_template('account.html')

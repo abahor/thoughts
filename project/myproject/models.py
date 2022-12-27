@@ -15,9 +15,8 @@ class Users(db.Model, UserMixin):
     email = db.Column(db.String(64), unique=True, index=True, nullable=False)
     username = db.Column(db.String(64), nullable=False)
     password = db.Column(db.String(128), nullable=False)
-    profile_pic = db.Column(db.String(64), default='/static/pics/default.jpg', nullable=False)
     post = db.relationship('Thoughts', backref='author', lazy='dynamic')
-    user_comments = db.relationship('comments', backref='user_comments', lazy='joined')
+    # user_comments = db.relationship('comments', backref='user_comments', lazy='joined')
 
     def __init__(self, email, username, password):
         self.username = username
@@ -42,8 +41,9 @@ class Thoughts(db.Model):
         self.user_id = user_id
         self.private = pri
 
-class comments(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    text = db.Column(db.Text)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    date = db.Column(db.DateTime,default=datetime.utcnow,nullable=False)
+
+# class comments(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     text = db.Column(db.Text)
+#     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+#     date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)

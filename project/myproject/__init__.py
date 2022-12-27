@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 Migrate(app, db)
 
 # -------- configuration for db
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://codeXz:hpprobook450g3*@127.0.0.1/thoughts'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:password@127.0.0.1/thoughts'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'mysecretkey'
 
@@ -42,7 +42,12 @@ login = LoginManager()
 login.init_app(app)
 login.login_view = 'users.login'
 
-login.refresh_view = "users.change"
+login.refresh_view = "users.account"
+LoginManager.needs_refresh_message = (
+    u"To protect your account, please re-authenticate to access this page."
+)
+LoginManager.needs_refresh_message_category = "info"
+
 from myproject.messages.messages import messages
 from myproject.users.users import users
 
