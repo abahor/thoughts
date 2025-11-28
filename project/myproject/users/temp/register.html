@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container">
+<div class="jumbotron">
+  <form class=""  method="post">
+    <div class="form-group">
+      {{ form.hidden_tag() }}
+      {{ form.email.label(class="form-check-label") }}
+      {{ form.email(class='form-control') }}
+    </div>
+    <div class="form-group">
+      {{ form.username.label(class="form-check-label") }}
+      {{ form.username(class='form-control') }}
+    </div>
+    <div class="form-group">
+      {{ form.password.label(class="form-check-label") }}
+      {{ form.password(class='form-control') }}
+    </div>
+    <div class="form-group">
+      {{ form.pass_confirm.label(class='form-check-label') }}
+      {{ form.pass_confirm(class='form-control') }}
+    </div>
+      {{ form.submit(class='btn btn-primary') }}
+  </form>
+</div>
+</div>
+{% endblock %}

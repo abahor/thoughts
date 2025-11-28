@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thoughts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+{% block header %}
+    <header class="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Thoughts</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          {% if current_user.is_authenticated %}
+        <li><a class="nav-link" href="{{ url_for('users.main') }}">Home</a></li>
+        <li><a class="nav-link" href="{{ url_for('messages.create') }}">create</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('users.account') }}">{{ current_user.username }}</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link float-right" href="{{ url_for('users.logout') }}" tabindex="-1">logout</a>
+      </li>
+          {% else %}
+        <li>
+            <a class="nav-link" href="{{ url_for('users.main') }}">Home</a></li>
+        <li><a class="nav-link" href="{{ url_for('users.about') }}">about</a></li>
+        <li><a class="nav-link" href="{{ url_for('users.register') }}">register</a></li>
+          <li class="nav-item"> <a class="nav-link float-right" href="{{ url_for('users.login') }}" tabindex="-1">login</a>
+        </li>
+
+          {% endif %}
+
+        </ul>
+
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Dropdown-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">Action</a>-->
+<!--          <a class="dropdown-item" href="#">Another action</a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--          <a class="dropdown-item" href="#">Something else here</a>-->
+<!--        </div>-->
+
+
+<!--    <form class="form-inline my-2 my-lg-0">-->
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--    </form>-->
+  </div>
+</nav>
+    </header>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h3>welcome to Thoughts</h3>
+        <p>the best place to share, write, read anything anonymous</p>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

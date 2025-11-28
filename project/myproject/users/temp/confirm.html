@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container">
+<div class="jumbotron">
+  <form class=""  method="post">
+    <div class="form-group">
+      {{ form.hidden_tag() }}
+      {{ form.code.label(class="form-check-label") }}
+      {{ form.code(class='form-control') }}
+    </div>
+
+      {{ form.submit(class='btn btn-primary') }}
+  </form>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Welcome to the your account</h1>
+        <h6>{{ current_user.email }}</h6>
+        <h6>{{ current_user.username }}</h6>
+
+        <ul>
+          {% for i in current_user.post %}
+            <li>{{ i.text }} - {{ i.date }}</li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
